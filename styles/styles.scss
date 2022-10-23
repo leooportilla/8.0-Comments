@@ -1,0 +1,429 @@
+@font-face {
+
+    font-family: Spartan Regular;
+    src: url(../fuente/LeagueSpartanRegular.ttf);
+}
+
+@font-face {
+    font-family: Spartan Medium;
+    src: url(../fuente/LeagueSpartanMedium.ttf);
+}
+
+@font-face {
+    font-family: Spartan Bold;
+    src: url(../fuente/LeagueSpartanBold.ttf);
+}
+
+/* VARIABLE */
+/* Colores Primarios */
+    $Colores: (
+        "Magenta": rgb(80, 32, 80),
+        "DarkMagenta": rgb(147, 123, 146),
+        "LightMagenta": hsl(300, 24%, 96%),
+        "Pink": rgb(238, 104, 164),
+        "White": hsl(0, 0%, 100%),
+    );
+
+    /* Adiccion de colores */
+
+    /* Font Size */
+    $FontSize: 15px;
+
+    /* Tipografia */
+    $Fuentes: (
+        "Fuente400": Spartan Regular,
+        "Fuente500": Spartan Medium,
+        "Fuente700": Spartan Bold,
+    );
+
+    /* Resolucion */
+    $Resolucion: (
+        "MovilSmall": 320px,
+        "MovilStandard": 480px,
+        "TabletSmall": 768px,
+        "TabletStandard": 960px,
+        "Laptop": 1024px,
+        "Desktop": 1328px,
+    );
+
+/* FUNCIONES */
+    /* Centrar grid */
+    @mixin gridcenter() {
+        display: grid;
+        height: 100vh;
+        width: 100vw;
+        justify-items: center;
+        align-items: center;
+    }
+
+    /* Flex */
+    @mixin flexx ($direccion, $alig, $justify) {
+        display: flex;
+        flex-direction: $direccion;
+        align-items: $alig;
+        justify-items: $justify;
+    }
+
+    /* Reposive Desing */
+    @mixin Desktop ($resolucion : 1328px, $resolucion2) {
+        @media screen and (min-width: $resolucion) and (max-width: $resolucion2) {
+            @content;
+        }
+    }
+    @mixin Tablet ($resolucion : 960px) {
+        @media screen and (max-width: $resolucion) {
+            @content;
+        }
+    }
+    @mixin Movil ($resolucion : 480px) {
+        @media screen and (max-width: $resolucion) {
+            @content;
+        }
+    }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 1830px;
+    @include gridcenter();
+    font-size: $FontSize;
+    background-image: url(../images/pattern-topdesktop.svg), url(../images/pattern-bottomdesktop.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: left 0 top, right 0 bottom 0;
+    padding: 6em 15em;
+
+    & .main {
+        width: 100%;
+        min-width: 1425px;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+            "Words Rating"
+            "Comments Comments";
+    
+        &__words {
+            grid-area: Words;
+    
+            &-title {
+                color: map-get($Colores, "Magenta");
+                font-family: map-get($Fuentes, "Fuente700");
+                font-size: 5em;
+                padding-right: 3em;
+            }
+            
+            &-paragraph {
+                color: map-get($Colores, "DarkMagenta");
+                font-family: map-get($Fuentes, "Fuente500");
+                font-size: 1.7em;
+                line-height: 1.3;
+                margin-bottom: 2em;
+                padding-top: 1em;
+                padding-right: 4em;
+            }
+        }
+    
+    
+        &__rating {
+            grid-area: Rating;
+            @include flexx (column, flex-end, center);
+            gap: 1.2em;
+            margin-top: 3em; 
+            
+            &-ratings {
+                @include flexx (row, center, center);
+                width: 550px;
+                height: 70px;
+                background-color: map-get($Colores, "LightMagenta");
+                padding-left: 2em;
+                border-radius: 10px;
+    
+                & div {
+                    width: 150px;
+                    margin-right: 1.5em; 
+
+                    & img {
+                        width: 1.4em;
+                        margin-left: 0.4em;
+
+                    }
+                }
+    
+                & h2 {
+                    font-size: 1.3em;
+                    font-family: map-get($Fuentes, "Fuente500");
+                    color: map-get($Colores, "Magenta");
+                    letter-spacing: 1px;
+                }
+                
+                &.one {
+                    position: relative;
+                    right: 10em;
+                }
+                
+                &.two {
+                    position: relative;
+                    right: 5em;
+                }
+                
+                &.three {
+                    position: relative;
+                }
+            }
+    
+        }
+    
+        &__comments {
+            grid-area: Comments;
+            @include flexx(row, flex-start, center);
+            justify-content: space-between;
+            height: 100%;
+    
+            &-comentary {
+                @include flexx (column, normal, normal);
+                width: 450px;
+                height: 275px;
+                background-color: map-get($Colores, "Magenta");
+                border-radius: 10px;
+                padding: 3em 2.5em;
+                letter-spacing: 1px;
+    
+                &.dos {
+                    position: relative;
+                    top: 1.5em;
+                }
+                
+                &.tres {
+                    position: relative;
+                    top: 3em;
+                }
+                
+                & div {
+                    @include flexx (row, center, center);
+    
+                    & img {
+                        width: 4em;
+                        border-radius: 50%;
+                    }
+    
+                    .comentary__information-origin {
+                        height: 100%;
+                        @include flexx (column, normal, center);
+                        justify-content: space-between;
+                        padding: 0.2em 0;
+                        margin-left: 1em;
+                    }
+    
+                    .origin__name {
+                        color: map-get($Colores, "White");
+                        font-family: map-get($Fuentes, "Fuente500");
+                        font-size: 1.3em;
+                    }
+    
+                    .origin__profession {
+                        margin-top: 0.3em;
+                        color: map-get($Colores, "Pink");
+                        font-family: map-get($Fuentes, "Fuente400");
+                        font-size: 1.3em;
+                        font-weight: 200;
+                    }
+                }
+            
+                & p{
+                    color: map-get($Colores, "White");
+                    font-family: map-get($Fuentes, "Fuente400");
+                    font-size: 1.3em;
+                    line-height: 1.3;
+                    margin-top: 1.5em;
+                }
+            }
+    
+        }
+    
+    }
+
+    & .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: map-get($Fuentes, "Fuente500");
+        color: map-get($Colores, "Magenta");
+
+        &__atributos {
+            font-size: 1em;
+            font-weight: 300;
+            color: map-get($Colores, "Magenta");
+            font-family: map-get($Fuentes, "Fuente500");
+
+            &-enlace {
+                margin-left: 0.4em;
+                margin-right: 0.4em;
+            }
+        }
+    }
+}
+
+@include Tablet (map-get($Resolucion, "MovilStandard")) {
+    body {
+        width: 100%;
+        min-width: 100%;
+        height: 100%;
+        padding: 10em 5em;
+
+        & .main {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            justify-content: center;
+            grid-template-columns: 885px;
+            grid-template-rows: 650px 600px 2100px;
+            grid-template-areas:
+                "Words"
+                "Rating"
+                "Comments";
+        
+            &__words {
+                width: 100%;
+                height: 100%;
+                text-align: center;
+
+                &-title {
+                    font-size: 7em;
+                    text-align: center;
+                    padding: 0;
+                    margin-bottom: 0.5em;
+                }
+                
+                &-paragraph {
+                    font-size: 3em;
+                    padding: 0 0.5em;
+                    margin: 0;
+                    margin-bottom: 2em;
+                }
+            }
+        
+        
+            &__rating {
+                grid-area: Rating;
+                width: 100%;
+                height: 100%;
+                @include flexx (column, center, center);
+                gap: 3em;
+                margin: 0em; 
+                margin-bottom: 4em;
+                
+                &-ratings {
+                    width: 100%;
+                    height: 100%;
+                    @include flexx (column, center, center);
+                    justify-content: center;
+                    align-content: center;
+                    border-radius: 20px;
+                    padding: 2em 0;
+        
+                    & div {
+                        width: 350px;
+                        margin: 0; 
+                        margin-bottom: 2em;
+
+                        & img {
+                            width: 3em;
+                            margin-left: 1.3em;
+                        }
+                    }
+        
+                    & h2 {
+                        font-size: 2.5em;
+                    }
+                    
+                    &.one {
+                        position: static;
+                    }
+                    
+                    &.two {
+                        position: static;
+                    }
+                    
+                    &.three {
+                        position: static;
+                    }
+                }
+        
+            }
+        
+            &__comments {
+                grid-area: Comments;
+                width: 100%;
+                height: 100%;
+                @include flexx(column, center, center);
+                justify-content: space-between;
+                margin-top: 7em;
+        
+                &-comentary {
+                    width: 100%;
+                    height: 660px;
+                    @include flexx (column, normal, normal);
+                    border-radius: 20px;
+                    padding: 6em 4em;
+        
+                    &.dos {
+                        position: static;
+                    }
+                    
+                    &.tres {
+                        position: static;
+                    }
+                    
+                    & div {
+                    
+                        & img {
+                            width: 8em;
+                        }
+        
+                        .comentary__information-origin {
+                            height: 5em;
+                            justify-content: space-between;
+                            margin-left: 4em;
+                        }
+        
+                        .origin__name {
+                            margin: 0;
+                            font-size: 3em;
+                        }
+        
+                        .origin__profession {
+                            margin-top: 0.3em;
+                            font-size: 3em;
+                        }
+                    }
+                
+                    & p{
+                        font-size: 3em;
+                        margin-top: 1.5em;
+                    }
+                }
+        
+            }
+        
+        }
+    
+        & .footer {
+            margin-top: 10em;
+
+            &__atributos {
+                font-size: 2em;
+    
+                &-enlace {
+                    font-size: 2em;
+                }
+            }
+        }
+    }     
+}
+

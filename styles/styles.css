@@ -1,0 +1,335 @@
+@font-face {
+  font-family: Spartan Regular;
+  src: url(../fuente/LeagueSpartanRegular.ttf);
+}
+@font-face {
+  font-family: Spartan Medium;
+  src: url(../fuente/LeagueSpartanMedium.ttf);
+}
+@font-face {
+  font-family: Spartan Bold;
+  src: url(../fuente/LeagueSpartanBold.ttf);
+}
+/* VARIABLE */
+/* Colores Primarios */
+/* Adiccion de colores */
+/* Font Size */
+/* Tipografia */
+/* Resolucion */
+/* FUNCIONES */
+/* Centrar grid */
+/* Flex */
+/* Reposive Desing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 1830px;
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  justify-items: center;
+  align-items: center;
+  font-size: 15px;
+  background-image: url(../images/pattern-topdesktop.svg), url(../images/pattern-bottomdesktop.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: left 0 top, right 0 bottom 0;
+  padding: 6em 15em;
+}
+body .main {
+  width: 100%;
+  min-width: 1425px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: "Words Rating" "Comments Comments";
+}
+body .main__words {
+  grid-area: Words;
+}
+body .main__words-title {
+  color: rgb(80, 32, 80);
+  font-family: Spartan Bold;
+  font-size: 5em;
+  padding-right: 3em;
+}
+body .main__words-paragraph {
+  color: rgb(147, 123, 146);
+  font-family: Spartan Medium;
+  font-size: 1.7em;
+  line-height: 1.3;
+  margin-bottom: 2em;
+  padding-top: 1em;
+  padding-right: 4em;
+}
+body .main__rating {
+  grid-area: Rating;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-items: center;
+  gap: 1.2em;
+  margin-top: 3em;
+}
+body .main__rating-ratings {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+  width: 550px;
+  height: 70px;
+  background-color: hsl(300deg, 24%, 96%);
+  padding-left: 2em;
+  border-radius: 10px;
+}
+body .main__rating-ratings div {
+  width: 150px;
+  margin-right: 1.5em;
+}
+body .main__rating-ratings div img {
+  width: 1.4em;
+  margin-left: 0.4em;
+}
+body .main__rating-ratings h2 {
+  font-size: 1.3em;
+  font-family: Spartan Medium;
+  color: rgb(80, 32, 80);
+  letter-spacing: 1px;
+}
+body .main__rating-ratings.one {
+  position: relative;
+  right: 10em;
+}
+body .main__rating-ratings.two {
+  position: relative;
+  right: 5em;
+}
+body .main__rating-ratings.three {
+  position: relative;
+}
+body .main__comments {
+  grid-area: Comments;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+body .main__comments-comentary {
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  justify-items: normal;
+  width: 450px;
+  height: 275px;
+  background-color: rgb(80, 32, 80);
+  border-radius: 10px;
+  padding: 3em 2.5em;
+  letter-spacing: 1px;
+}
+body .main__comments-comentary.dos {
+  position: relative;
+  top: 1.5em;
+}
+body .main__comments-comentary.tres {
+  position: relative;
+  top: 3em;
+}
+body .main__comments-comentary div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+}
+body .main__comments-comentary div img {
+  width: 4em;
+  border-radius: 50%;
+}
+body .main__comments-comentary div .comentary__information-origin {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  justify-items: center;
+  justify-content: space-between;
+  padding: 0.2em 0;
+  margin-left: 1em;
+}
+body .main__comments-comentary div .origin__name {
+  color: hsl(0deg, 0%, 100%);
+  font-family: Spartan Medium;
+  font-size: 1.3em;
+}
+body .main__comments-comentary div .origin__profession {
+  margin-top: 0.3em;
+  color: rgb(238, 104, 164);
+  font-family: Spartan Regular;
+  font-size: 1.3em;
+  font-weight: 200;
+}
+body .main__comments-comentary p {
+  color: hsl(0deg, 0%, 100%);
+  font-family: Spartan Regular;
+  font-size: 1.3em;
+  line-height: 1.3;
+  margin-top: 1.5em;
+}
+body .footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Spartan Medium;
+  color: rgb(80, 32, 80);
+}
+body .footer__atributos {
+  font-size: 1em;
+  font-weight: 300;
+  color: rgb(80, 32, 80);
+  font-family: Spartan Medium;
+}
+body .footer__atributos-enlace {
+  margin-left: 0.4em;
+  margin-right: 0.4em;
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    padding: 10em 5em;
+  }
+  body .main {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 885px;
+    grid-template-rows: 650px 600px 2100px;
+    grid-template-areas: "Words" "Rating" "Comments";
+  }
+  body .main__words {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  body .main__words-title {
+    font-size: 7em;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 0.5em;
+  }
+  body .main__words-paragraph {
+    font-size: 3em;
+    padding: 0 0.5em;
+    margin: 0;
+    margin-bottom: 2em;
+  }
+  body .main__rating {
+    grid-area: Rating;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    gap: 3em;
+    margin: 0em;
+    margin-bottom: 4em;
+  }
+  body .main__rating-ratings {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    border-radius: 20px;
+    padding: 2em 0;
+  }
+  body .main__rating-ratings div {
+    width: 350px;
+    margin: 0;
+    margin-bottom: 2em;
+  }
+  body .main__rating-ratings div img {
+    width: 3em;
+    margin-left: 1.3em;
+  }
+  body .main__rating-ratings h2 {
+    font-size: 2.5em;
+  }
+  body .main__rating-ratings.one {
+    position: static;
+  }
+  body .main__rating-ratings.two {
+    position: static;
+  }
+  body .main__rating-ratings.three {
+    position: static;
+  }
+  body .main__comments {
+    grid-area: Comments;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    justify-content: space-between;
+    margin-top: 7em;
+  }
+  body .main__comments-comentary {
+    width: 100%;
+    height: 660px;
+    display: flex;
+    flex-direction: column;
+    align-items: normal;
+    justify-items: normal;
+    border-radius: 20px;
+    padding: 6em 4em;
+  }
+  body .main__comments-comentary.dos {
+    position: static;
+  }
+  body .main__comments-comentary.tres {
+    position: static;
+  }
+  body .main__comments-comentary div img {
+    width: 8em;
+  }
+  body .main__comments-comentary div .comentary__information-origin {
+    height: 5em;
+    justify-content: space-between;
+    margin-left: 4em;
+  }
+  body .main__comments-comentary div .origin__name {
+    margin: 0;
+    font-size: 3em;
+  }
+  body .main__comments-comentary div .origin__profession {
+    margin-top: 0.3em;
+    font-size: 3em;
+  }
+  body .main__comments-comentary p {
+    font-size: 3em;
+    margin-top: 1.5em;
+  }
+  body .footer {
+    margin-top: 10em;
+  }
+  body .footer__atributos {
+    font-size: 2em;
+  }
+  body .footer__atributos-enlace {
+    font-size: 2em;
+  }
+}/*# sourceMappingURL=styles.css.map */

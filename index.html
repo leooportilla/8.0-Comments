@@ -1,61 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
+<html lang="es">
 
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Frontend Mentor | Social proof section</title>
+  <!-- Icono de vestana -->
+  <link rel="icon" href="./images/favicon.png" />
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
-  </head>
-  <body>
-    10,000+ of our users love our products.
+  <!-- Titulo de vestana -->
+  <title>Comments</title>
 
-    We only provide great products combined with excellent customer service.
-    See what our satisfied customers are saying about our services.
-    
-    Rated 5 Stars in Reviews
-    Rated 5 Stars in Report Guru
-    Rated 5 Stars in BestTech
-    
-    Colton Smith 
-    Verified Buyer
-    "We needed the same printed design as the one we had ordered a week prior.
-    Not only did they find the original order, but we also received it in time.
-    Excellent!"
-    
-    Irene Roberts 
-    Verified Buyer
-    "Customer service is always excellent and very quick turn around. Completely
-    delighted with the simplicity of the purchase and the speed of delivery."
-    
-    Anne Wallace 
-    Verified Buyer
-    "Put an order with this company and can only praise them for the very high
-    standard. Will definitely use them again and recommend them to everyone!"
+  <!-- Enlace -->
+  <link rel="stylesheet" href="./styles/styles.css">
+</head>
 
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div>
-  </body>
+
+<body>
+  <main class="main">
+
+    <!-- Titulo -->
+    <article class="main__words">
+      <h1 class="main__words-title">10,000+ of our users love our products.</h1>
+      <p class="main__words-paragraph">We only provide great products combined with excellent customer service.
+        See what our satisfied customers are saying about our services.</p>
+    </article>
+
+    <!-- Calificacion -->
+    <article class="main__rating">
+
+      <!-- Calificacion de revision -->
+      <section class="main__rating-ratings one">
+        <div class="ratings__containerimage">
+          <img class="ratings__containerimage-icon" src="./images/iconostar.svg" alt="Estrellas Star">
+          <img class="ratings__containerimage-icon" src="./images/iconostar.svg" alt="Estrellas Star">
+          <img class="ratings__containerimage-icon" src="./images/iconostar.svg" alt="Estrellas Star">
+          <img class="ratings__containerimage-icon" src="./images/iconostar.svg" alt="Estrellas Star">
+          <img class="ratings__containerimage-icon" src="./images/iconostar.svg" alt="Estrellas Star">
+        </div>
+        <h2 class="ratings__subtitle">Rated 5 Stars in Reviews</h2>
+      </section>
+
+      <!-- Calificacion de informe -->
+      <section class="main__rating-ratings two">
+        <div class="ratings__containerimage">
+          <img class="ratings__containerimage-icon" src="./images/iconostar.svg" alt="Estrellas Star">
+          <img class="ratings__containerimage-icon" src="./images/iconostar.svg" alt="Estrellas Star">
+          <img class="ratings__containerimage-icon" src="./images/iconostar.svg" alt="Estrellas Star">
+          <img class="ratings__containerimage-icon" src="./images/iconostar.svg" alt="Estrellas Star">
+          <img class="ratings__containerimage-icon" src="./images/iconostar.svg" alt="Estrellas Star">
+        </div>
+        <h2 class="ratings__subtitle">Rated 5 Stars in Report Guru</h2>
+      </section>
+
+      <!-- Calificacion de tecnologia -->
+      <section class="main__rating-ratings three">
+        <div class="ratings__containerimage">
+          <img class="ratings__containerimage-icon" src="./images/iconostar.svg" alt="Estrellas Star">
+          <img class="ratings__containerimage-icon" src="./images/iconostar.svg" alt="Estrellas Star">
+          <img class="ratings__containerimage-icon" src="./images/iconostar.svg" alt="Estrellas Star">
+          <img class="ratings__containerimage-icon" src="./images/iconostar.svg" alt="Estrellas Star">
+          <img class="ratings__containerimage-icon" src="./images/iconostar.svg" alt="Estrellas Star">
+        </div>
+        <h2 class="ratings__subtitle">Rated 5 Stars in BestTech</h2>
+      </section>
+    </article>
+
+    <!-- Comentarios -->
+    <article class="main__comments">
+
+      <!-- Comentario de Colton -->
+      <section class="main__comments-comentary uno">
+        <!-- Seccion de inforamcion -->
+        <div class="comentary__information">
+          <img class="comentary__information-profile"  src="./images/colton.jpg" alt="Persona Person Profile Colton" ">
+          <!-- Seccion de nombre y profesion -->
+          <div class="comentary__information-origin">
+            <h3 class="origin__name">Colton Smith</h3>
+            <h3 class="origin__profession">Verified Buyer</h3>
+          </div>
+        </div>
+        <p class="comentary__subparagraph">"We needed the same printed design as the one we had ordered a week prior.
+          Not only did they find the original order, but we also received it in time.
+          Excellent!"</p>
+      </section>
+
+      <!-- Comentario de Irene -->
+      <section class="main__comments-comentary dos">
+        <!-- Seccion de inforamcion -->
+        <div class="comentary__information">
+          <img class="comentary__information-profile" src="./images/irene.jpg" alt="Persona Person Profile Colton">
+          <!-- Seccion de nombre y profesion -->
+          <div class="comentary__information-origin">
+            <h3 class="origin__name">Irene Roberts</h3>
+            <h3 class="origin__profession">Verified Buyer</h3>
+          </div>
+        </div>
+        <p class="comentary__subparagraph">"Customer service is always excellent and very quick turn around. Completely
+          delighted with the simplicity of the purchase and the speed of delivery."</p>
+      </section>
+
+      <!-- Comentario de Anne -->
+      <section class="main__comments-comentary tres">
+        <!-- Seccion de inforamcion -->
+        <div class="comentary__information">
+          <img class="comentary__information-profile" src="./images/anne.jpg" alt="Persona Person Profile Colton">
+          <!-- Seccion de nombre y profesion -->
+          <div class="comentary__information-origin">
+            <h3 class="origin__name">Anne Wallace</h3>
+            <h3 class="origin__profession">Verified Buyer</h3>
+          </div>
+        </div>
+        <p class="comentary__subparagraph">"Put an order with this company and can only praise them for the very high
+          standard. Will definitely use them again and recommend them to everyone!"</p>
+      </section>
+
+    </article>
+  </main>
+
+  <!--   Autores  -->
+  <footer class="footer">
+    <h2 class="footer__atributos">Challenge by</h2>
+    <a class="footer__atributos-enlace" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>
+    <h2 class="footer__atributos">Coded by</h2>
+    <a class="footer__atributos-enlace" href="https://www.frontendmentor.io/profile/leooportilla" target="_blank">Leonardo Portilla</a>
+  </footer>
+</body>
+
 </html>
